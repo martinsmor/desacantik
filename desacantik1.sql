@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2025 at 08:01 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Waktu pembuatan: 31 Jul 2025 pada 08.50
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `agama`
+-- Struktur dari tabel `agama`
 --
 
 CREATE TABLE `agama` (
@@ -35,7 +35,7 @@ CREATE TABLE `agama` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `agama`
+-- Dumping data untuk tabel `agama`
 --
 
 INSERT INTO `agama` (`id`, `agama`, `created_at`, `updated_at`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `agama` (`id`, `agama`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bahanbakarmasak`
+-- Struktur dari tabel `bahanbakarmasak`
 --
 
 CREATE TABLE `bahanbakarmasak` (
@@ -61,7 +61,7 @@ CREATE TABLE `bahanbakarmasak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `bahanbakarmasak`
+-- Dumping data untuk tabel `bahanbakarmasak`
 --
 
 INSERT INTO `bahanbakarmasak` (`id`, `bahanbakar_masak`, `created_at`, `updated_at`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `bahanbakarmasak` (`id`, `bahanbakar_masak`, `created_at`, `updated_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bansos`
+-- Struktur dari tabel `bansos`
 --
 
 CREATE TABLE `bansos` (
@@ -89,7 +89,7 @@ CREATE TABLE `bansos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `bansos`
+-- Dumping data untuk tabel `bansos`
 --
 
 INSERT INTO `bansos` (`id`, `bansos`, `created_at`, `updated_at`) VALUES
@@ -160,31 +160,32 @@ INSERT INTO `bansos` (`id`, `bansos`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `beritas`
+-- Struktur dari tabel `beritas`
 --
 
 CREATE TABLE `beritas` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `berita` text DEFAULT NULL,
+  `judul` varchar(255) NOT NULL,
+  `berita` text NOT NULL,
+  `gambar` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `beritas`
+-- Dumping data untuk tabel `beritas`
 --
 
-INSERT INTO `beritas` (`id`, `berita`, `created_at`, `updated_at`) VALUES
-(1, NULL, '2025-05-08 20:55:16', '2025-05-08 20:55:16'),
-(2, NULL, '2025-05-08 20:55:19', '2025-05-08 20:55:19'),
-(3, 'adsadsad', '2025-05-08 20:58:38', '2025-05-08 20:58:38'),
-(4, 'Lorem ipsum (/ˌlɔː.rəm ˈɪp.səm/ LOR-əm IP-səm) is a dummy or placeholder text commonly used in graphic design, publishing, and web development. Its purpose is to permit a page layout to be designed, independently of the copy that will subsequently populate it, or to demonstrate various fonts of a typeface without meaningful text that could be distracting.\n\nLorem ipsum is typically a corrupted version of De finibus bonorum et malorum, a 1st-century BC text by the Roman statesman and philosopher Cicero, with words altered, added, and removed to make it nonsensical and improper Latin. The first two words are the truncation of dolorem ipsum (\"pain itself\").\n\nVersions of the Lorem ipsum text have been used in typesetting since the 1960s, when advertisements for Letraset transfer sheets popularized it.[1] Lorem ipsum was introduced to the digital world in the mid-1980s, when Aldus employed it in graphic and word-processing templates for its desktop publishing program PageMaker. Other popular word processors, including Pages and Microsoft Word, have since adopted Lorem ipsum,[2] as have many LaTeX packages,[3][4][5] web content managers such as Joomla! and WordPress, and CSS libraries such as Semantic UI', '2025-05-08 20:59:12', '2025-05-08 20:59:12'),
-(5, 'aasdasdadadad', '2025-06-02 17:16:40', '2025-06-02 17:16:40');
+INSERT INTO `beritas` (`id`, `judul`, `berita`, `gambar`, `created_at`, `updated_at`) VALUES
+(5, 'Puluhan Rumah Bantuan Terbengkalai', 'Wakil Bupati Teluk Bintuni, Joko Lingara, melakukan inspeksi mendadak pada tanggal 9 Mei 2025 terhadap sekitar 50 rumah bantuan Pemerintah Provinsi Papua Barat di Kampung Korano Jaya SP 2, yang ternyata belum dihuni meskipun dibangun sejak 2019. Joko Lingara menyatakan keprihatinan atas kondisi rumah yang sudah ditumbuhi semak belukar dan menyebut, “Waduh… ini bagaimana sudah rumah-rumah ini? Sungguh disayangkan… rumah sebagus ini”. Kepala Kampung Korano Jaya, Simon Dekarto, menerangkan bahwa daftar calon penerima telah disusun bersama tokoh masyarakat dan telah diserahkan ke Dinas Perumahan, meski hingga kini belum ada tindak lanjut penyerahan. Awalnya pemerintah meminta alokasi 15 unit untuk pihak tertentu, kemudian direduksi menjadi 5; namun masyarakat menolak karena penerima bukan warga lokal, dan menegaskan bahwa rumah itu seharusnya untuk warga asli yang belum punya hunian. Wakil Bupati Joko Lingara mengancam akan memanggil Dinas Perumahan dan Kawasan Permukiman Teluk Bintuni untuk meminta klarifikasi dan memastikan rumah disalurkan ke orang yang tepat, khususnya Orang Asli Papua (OAP) yang masih belum memiliki rumah', '1753847758.jpg', '2025-07-29 18:55:58', '2025-07-29 18:55:58'),
+(6, 'Bantuan Pertanian untuk Warga', 'Pada 2 September 2024, warga Kampung Korano Jaya SP 2 menerima bantuan bibit pertanian lewat program dari Dinas Pemberdayaan Masyarakat dan Pemerintah Kabupaten Teluk Bintuni. Ini menunjukkan adanya upaya peningkatan kesejahteraan lewat sektor pertanian meskipun persoalan infrastruktur hunian belum terselesaikan.', '1753847850.jpeg', '2025-07-29 18:57:30', '2025-07-29 18:57:30'),
+(7, 'Fasilitas Lapangan dan Kompetisi Olahraga', 'Pada 8 Juni 2025, Wakil Bupati Joko Lingara meresmikan Kompetisi Sepak Bola Divisi 1 dan Divisi 2 Persitelbin 2025, yang digelar di Lapangan Sepak Bola Korano Jaya SP 2. Acara ini merupakan bagian dari rangkaian perayaan Hari Ulang Tahun ke-22 Kabupaten Teluk Bintuni. Kegiatan ini mendapat respons positif sebagai ajang pembinaan generasi muda dan penguatan sosial lokal.', '1753847916.jpg', '2025-07-29 18:58:36', '2025-07-29 18:58:36'),
+(8, 'BPS Teluk Bintuni Canangkan Kampung Korano Jaya sebagai Desa Cinta Statistik (Desa Cantik) 2025', 'Badan Pusat Statistik (BPS) Kabupaten Teluk Bintuni secara resmi mencanangkan Kampung Korano Jaya sebagai Desa Cinta Statistik (Desa Cantik) Tahun 2025, dalam sebuah acara yang digelar pada Senin (05/05/2025) di Distrik Manimeri, Kabupaten Teluk Bintuni, Papua Barat.\r\n\r\nKegiatan ini merupakan bagian dari program pembinaan statistik sektoral yang rutin dilakukan BPS dalam rangka meningkatkan literasi data dan mendorong tata kelola pembangunan berbasis bukti di tingkat desa. Acara pencanangan tersebut dibuka langsung oleh Bupati Teluk Bintuni, Yohanis Manibuy, SE., MH., dan dihadiri oleh perwakilan instansi terkait serta tokoh masyarakat.\r\n\r\nDalam sambutannya, Kepala BPS Teluk Bintuni, Maimun, SST., M.Stat., menyampaikan bahwa Desa Cantik bukan sekadar program teknis statistik, namun merupakan gerakan untuk meningkatkan kesadaran dan pemahaman masyarakat akan pentingnya data dalam proses pengambilan keputusan.\r\n\r\n“Cinta Statistik bukan hanya tentang angka, tetapi tentang bagaimana kita memahami dan memanfaatkan data untuk membuat keputusan yang lebih baik,” ujarnya.\r\n\r\nSementara itu, Bupati Yohanis Manibuy menyampaikan bahwa program Desa Cantik sangat sejalan dengan visi pembangunan Kabupaten Teluk Bintuni yang dituangkan dalam konsep SERASI (Sehat, Energik, Religius, Andal, Smart, dan Inovatif). Ia menekankan pentingnya data dalam mendukung pembangunan yang tepat sasaran dan berbasis kebutuhan riil masyarakat.', '1753848036.jpg', '2025-07-29 19:00:36', '2025-07-29 19:00:36');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blok6`
+-- Struktur dari tabel `blok6`
 --
 
 CREATE TABLE `blok6` (
@@ -202,7 +203,7 @@ CREATE TABLE `blok6` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blok6`
+-- Dumping data untuk tabel `blok6`
 --
 
 INSERT INTO `blok6` (`id`, `warga_id`, `nama_lahan`, `jenislahan_id`, `sppt_id`, `nomor_pajak`, `luas_lahan`, `hakmiliksertif_id`, `nama_hakmilik`, `created_at`, `updated_at`) VALUES
@@ -225,7 +226,7 @@ INSERT INTO `blok6` (`id`, `warga_id`, `nama_lahan`, `jenislahan_id`, `sppt_id`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blok7`
+-- Struktur dari tabel `blok7`
 --
 
 CREATE TABLE `blok7` (
@@ -278,7 +279,7 @@ CREATE TABLE `blok7` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `blok7`
+-- Dumping data untuk tabel `blok7`
 --
 
 INSERT INTO `blok7` (`id`, `id_warga`, `nomor_urut`, `nama_anggota`, `nik`, `hubungan_keluarga_id`, `keberadaan_id`, `jenis_kelamin_id`, `tanggal_lahir`, `umur`, `agama_id`, `suku_id`, `domisili_id`, `bansos_id`, `status_kawin_id`, `kepemilikan_bukunikah_id`, `KK_id`, `identitas_id`, `kehamilan_id`, `KB_id`, `sekolah_id`, `jenjang_sekolah_id`, `kelas_id`, `ijazah_id`, `pensiunan_id`, `bekerja_id`, `lamabekerja_id`, `pekerjaan_utama_id`, `status_pekerjaan_id`, `NPWP_id`, `transaksi_id`, `usaha_id`, `lapangan_usaha`, `pekerja_dibayar`, `pekerja_tidakdibayar`, `perizinan_usaha_id`, `perizinan_usaha`, `tempat_usaha_id`, `omset_id`, `internet_id`, `cacat_id`, `penyakitkronis_id`, `golongandarah_id`, `kondisigizi_id`, `created_at`, `updated_at`) VALUES
@@ -296,7 +297,7 @@ INSERT INTO `blok7` (`id`, `id_warga`, `nomor_urut`, `nama_anggota`, `nik`, `hub
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bukunikah`
+-- Struktur dari tabel `bukunikah`
 --
 
 CREATE TABLE `bukunikah` (
@@ -307,7 +308,7 @@ CREATE TABLE `bukunikah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `bukunikah`
+-- Dumping data untuk tabel `bukunikah`
 --
 
 INSERT INTO `bukunikah` (`id`, `buku_nikah`, `created_at`, `updated_at`) VALUES
@@ -318,7 +319,7 @@ INSERT INTO `bukunikah` (`id`, `buku_nikah`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cacat`
+-- Struktur dari tabel `cacat`
 --
 
 CREATE TABLE `cacat` (
@@ -329,7 +330,7 @@ CREATE TABLE `cacat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `cacat`
+-- Dumping data untuk tabel `cacat`
 --
 
 INSERT INTO `cacat` (`id`, `cacat`, `created_at`, `updated_at`) VALUES
@@ -350,7 +351,32 @@ INSERT INTO `cacat` (`id`, `cacat`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daya`
+-- Struktur dari tabel `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'dasd', 'fsdf@gmail.com', 'dasdd', 'fdsdfsdff', '2025-07-07 23:25:50', '2025-07-07 23:25:50'),
+(2, 'isak', 'isak@gmail.com', 'pelaporan', 'kamsdaskfndsfsff', '2025-07-29 19:15:22', '2025-07-29 19:15:22'),
+(3, 'martin', 'martinsimamora4@gmail.com', 'Pelaporan', 'YTH Bapak Kepala Kampung Korano Jaya SP2, saya .....', '2025-07-29 19:36:25', '2025-07-29 19:36:25');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `daya`
 --
 
 CREATE TABLE `daya` (
@@ -361,7 +387,7 @@ CREATE TABLE `daya` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `daya`
+-- Dumping data untuk tabel `daya`
 --
 
 INSERT INTO `daya` (`id`, `daya`, `created_at`, `updated_at`) VALUES
@@ -375,7 +401,7 @@ INSERT INTO `daya` (`id`, `daya`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `desa_kelurahan`
+-- Struktur dari tabel `desa_kelurahan`
 --
 
 CREATE TABLE `desa_kelurahan` (
@@ -386,7 +412,7 @@ CREATE TABLE `desa_kelurahan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `desa_kelurahan`
+-- Dumping data untuk tabel `desa_kelurahan`
 --
 
 INSERT INTO `desa_kelurahan` (`id`, `desa_kel`, `created_at`, `updated_at`) VALUES
@@ -395,7 +421,7 @@ INSERT INTO `desa_kelurahan` (`id`, `desa_kel`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `domisili`
+-- Struktur dari tabel `domisili`
 --
 
 CREATE TABLE `domisili` (
@@ -406,7 +432,7 @@ CREATE TABLE `domisili` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `domisili`
+-- Dumping data untuk tabel `domisili`
 --
 
 INSERT INTO `domisili` (`id`, `domisili`, `created_at`, `updated_at`) VALUES
@@ -417,7 +443,7 @@ INSERT INTO `domisili` (`id`, `domisili`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -433,7 +459,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fasilitasmasak`
+-- Struktur dari tabel `fasilitasmasak`
 --
 
 CREATE TABLE `fasilitasmasak` (
@@ -444,7 +470,7 @@ CREATE TABLE `fasilitasmasak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `fasilitasmasak`
+-- Dumping data untuk tabel `fasilitasmasak`
 --
 
 INSERT INTO `fasilitasmasak` (`id`, `fasilitas_masak`, `created_at`, `updated_at`) VALUES
@@ -456,7 +482,7 @@ INSERT INTO `fasilitasmasak` (`id`, `fasilitas_masak`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fotos`
+-- Struktur dari tabel `fotos`
 --
 
 CREATE TABLE `fotos` (
@@ -469,17 +495,20 @@ CREATE TABLE `fotos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `fotos`
+-- Dumping data untuk tabel `fotos`
 --
 
 INSERT INTO `fotos` (`id`, `name`, `detail`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'adadddd', 'adadddd', NULL, '2025-05-08 17:09:37', '2025-05-08 17:09:37'),
-(2, 'addddd', 'ddddd', NULL, '2025-05-08 17:09:56', '2025-05-08 17:09:56');
+(8, 'Desa  Cinta Statistik', 'Peresmian Kampung Korano Jaya sebagai Desa Cinta Statistik oleh Badan Pusat Statistik (BPS) Kabupaten Teluk Bintuni dan Bupati Kabupaten Teluk Bintuni', '1751930362.jpeg', '2025-07-07 14:19:23', '2025-07-07 14:19:23'),
+(15, 'Rapat', 'Rapat rutinan triwulan 1 Kampung Korano Jaya SP2', '1753848408.jpg', '2025-07-29 19:06:48', '2025-07-29 19:06:48'),
+(16, 'Diskusi tim', 'Melakukan diskusi bersama tim', '1753848440.jpg', '2025-07-29 19:07:20', '2025-07-29 19:07:20'),
+(17, 'Struktur Organisasi', 'Struktur Organisasi Kampung Korano Jaya SP2', '1753848468.jpg', '2025-07-29 19:07:48', '2025-07-29 19:07:48'),
+(18, 'Monografi', 'Monografi Kampung Korano Jaya SP2', '1753848495.jpg', '2025-07-29 19:08:15', '2025-07-29 19:08:15');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gizi`
+-- Struktur dari tabel `gizi`
 --
 
 CREATE TABLE `gizi` (
@@ -490,7 +519,7 @@ CREATE TABLE `gizi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `gizi`
+-- Dumping data untuk tabel `gizi`
 --
 
 INSERT INTO `gizi` (`id`, `gizi`, `created_at`, `updated_at`) VALUES
@@ -502,7 +531,7 @@ INSERT INTO `gizi` (`id`, `gizi`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `goldar`
+-- Struktur dari tabel `goldar`
 --
 
 CREATE TABLE `goldar` (
@@ -513,7 +542,7 @@ CREATE TABLE `goldar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `goldar`
+-- Dumping data untuk tabel `goldar`
 --
 
 INSERT INTO `goldar` (`id`, `goldar`, `created_at`, `updated_at`) VALUES
@@ -526,7 +555,7 @@ INSERT INTO `goldar` (`id`, `goldar`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hakmiliksertif`
+-- Struktur dari tabel `hakmiliksertif`
 --
 
 CREATE TABLE `hakmiliksertif` (
@@ -537,7 +566,7 @@ CREATE TABLE `hakmiliksertif` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `hakmiliksertif`
+-- Dumping data untuk tabel `hakmiliksertif`
 --
 
 INSERT INTO `hakmiliksertif` (`id`, `hakmilik_sertif`, `created_at`, `updated_at`) VALUES
@@ -548,7 +577,7 @@ INSERT INTO `hakmiliksertif` (`id`, `hakmilik_sertif`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hasilcacah`
+-- Struktur dari tabel `hasilcacah`
 --
 
 CREATE TABLE `hasilcacah` (
@@ -559,7 +588,7 @@ CREATE TABLE `hasilcacah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `hasilcacah`
+-- Dumping data untuk tabel `hasilcacah`
 --
 
 INSERT INTO `hasilcacah` (`id`, `hasilcacah`, `created_at`, `updated_at`) VALUES
@@ -570,7 +599,7 @@ INSERT INTO `hasilcacah` (`id`, `hasilcacah`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hubungankeluarga`
+-- Struktur dari tabel `hubungankeluarga`
 --
 
 CREATE TABLE `hubungankeluarga` (
@@ -581,7 +610,7 @@ CREATE TABLE `hubungankeluarga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `hubungankeluarga`
+-- Dumping data untuk tabel `hubungankeluarga`
 --
 
 INSERT INTO `hubungankeluarga` (`id`, `hubungan_keluarga`, `created_at`, `updated_at`) VALUES
@@ -597,7 +626,7 @@ INSERT INTO `hubungankeluarga` (`id`, `hubungan_keluarga`, `created_at`, `update
 -- --------------------------------------------------------
 
 --
--- Table structure for table `identitas`
+-- Struktur dari tabel `identitas`
 --
 
 CREATE TABLE `identitas` (
@@ -608,7 +637,7 @@ CREATE TABLE `identitas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `identitas`
+-- Dumping data untuk tabel `identitas`
 --
 
 INSERT INTO `identitas` (`id`, `identitas`, `created_at`, `updated_at`) VALUES
@@ -631,7 +660,7 @@ INSERT INTO `identitas` (`id`, `identitas`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenisatap`
+-- Struktur dari tabel `jenisatap`
 --
 
 CREATE TABLE `jenisatap` (
@@ -642,7 +671,7 @@ CREATE TABLE `jenisatap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `jenisatap`
+-- Dumping data untuk tabel `jenisatap`
 --
 
 INSERT INTO `jenisatap` (`id`, `jenis_atap`, `created_at`, `updated_at`) VALUES
@@ -660,7 +689,7 @@ INSERT INTO `jenisatap` (`id`, `jenis_atap`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenisdinding`
+-- Struktur dari tabel `jenisdinding`
 --
 
 CREATE TABLE `jenisdinding` (
@@ -671,7 +700,7 @@ CREATE TABLE `jenisdinding` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `jenisdinding`
+-- Dumping data untuk tabel `jenisdinding`
 --
 
 INSERT INTO `jenisdinding` (`id`, `jenis_dinding`, `created_at`, `updated_at`) VALUES
@@ -686,7 +715,7 @@ INSERT INTO `jenisdinding` (`id`, `jenis_dinding`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenislahan`
+-- Struktur dari tabel `jenislahan`
 --
 
 CREATE TABLE `jenislahan` (
@@ -697,7 +726,7 @@ CREATE TABLE `jenislahan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `jenislahan`
+-- Dumping data untuk tabel `jenislahan`
 --
 
 INSERT INTO `jenislahan` (`id`, `jenis_lahan`, `created_at`, `updated_at`) VALUES
@@ -710,7 +739,7 @@ INSERT INTO `jenislahan` (`id`, `jenis_lahan`, `created_at`, `updated_at`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenislantai`
+-- Struktur dari tabel `jenislantai`
 --
 
 CREATE TABLE `jenislantai` (
@@ -721,7 +750,7 @@ CREATE TABLE `jenislantai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `jenislantai`
+-- Dumping data untuk tabel `jenislantai`
 --
 
 INSERT INTO `jenislantai` (`id`, `jenis_lantai`, `created_at`, `updated_at`) VALUES
@@ -738,7 +767,7 @@ INSERT INTO `jenislantai` (`id`, `jenis_lantai`, `created_at`, `updated_at`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenislintang`
+-- Struktur dari tabel `jenislintang`
 --
 
 CREATE TABLE `jenislintang` (
@@ -749,7 +778,7 @@ CREATE TABLE `jenislintang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `jenislintang`
+-- Dumping data untuk tabel `jenislintang`
 --
 
 INSERT INTO `jenislintang` (`id`, `jenis_lintang`, `created_at`, `updated_at`) VALUES
@@ -759,7 +788,7 @@ INSERT INTO `jenislintang` (`id`, `jenis_lintang`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jk`
+-- Struktur dari tabel `jk`
 --
 
 CREATE TABLE `jk` (
@@ -770,7 +799,7 @@ CREATE TABLE `jk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `jk`
+-- Dumping data untuk tabel `jk`
 --
 
 INSERT INTO `jk` (`id`, `jk`, `created_at`, `updated_at`) VALUES
@@ -780,7 +809,7 @@ INSERT INTO `jk` (`id`, `jk`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kabupaten`
+-- Struktur dari tabel `kabupaten`
 --
 
 CREATE TABLE `kabupaten` (
@@ -791,7 +820,7 @@ CREATE TABLE `kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `kabupaten`
+-- Dumping data untuk tabel `kabupaten`
 --
 
 INSERT INTO `kabupaten` (`id`, `nama_kab`, `created_at`, `updated_at`) VALUES
@@ -800,7 +829,7 @@ INSERT INTO `kabupaten` (`id`, `nama_kab`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kb`
+-- Struktur dari tabel `kb`
 --
 
 CREATE TABLE `kb` (
@@ -811,7 +840,7 @@ CREATE TABLE `kb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `kb`
+-- Dumping data untuk tabel `kb`
 --
 
 INSERT INTO `kb` (`id`, `kb`, `created_at`, `updated_at`) VALUES
@@ -828,7 +857,7 @@ INSERT INTO `kb` (`id`, `kb`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `keberadaankeluarga`
+-- Struktur dari tabel `keberadaankeluarga`
 --
 
 CREATE TABLE `keberadaankeluarga` (
@@ -839,7 +868,7 @@ CREATE TABLE `keberadaankeluarga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `keberadaankeluarga`
+-- Dumping data untuk tabel `keberadaankeluarga`
 --
 
 INSERT INTO `keberadaankeluarga` (`id`, `keberadaan`, `created_at`, `updated_at`) VALUES
@@ -852,7 +881,7 @@ INSERT INTO `keberadaankeluarga` (`id`, `keberadaan`, `created_at`, `updated_at`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `keberadaansppt`
+-- Struktur dari tabel `keberadaansppt`
 --
 
 CREATE TABLE `keberadaansppt` (
@@ -863,7 +892,7 @@ CREATE TABLE `keberadaansppt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `keberadaansppt`
+-- Dumping data untuk tabel `keberadaansppt`
 --
 
 INSERT INTO `keberadaansppt` (`id`, `keberadaan_sppt`, `created_at`, `updated_at`) VALUES
@@ -873,7 +902,7 @@ INSERT INTO `keberadaansppt` (`id`, `keberadaan_sppt`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kecamatan`
+-- Struktur dari tabel `kecamatan`
 --
 
 CREATE TABLE `kecamatan` (
@@ -884,7 +913,7 @@ CREATE TABLE `kecamatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `kecamatan`
+-- Dumping data untuk tabel `kecamatan`
 --
 
 INSERT INTO `kecamatan` (`id`, `nama_kec`, `created_at`, `updated_at`) VALUES
@@ -893,7 +922,7 @@ INSERT INTO `kecamatan` (`id`, `nama_kec`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kepemilikan_a`
+-- Struktur dari tabel `kepemilikan_a`
 --
 
 CREATE TABLE `kepemilikan_a` (
@@ -904,7 +933,7 @@ CREATE TABLE `kepemilikan_a` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `kepemilikan_a`
+-- Dumping data untuk tabel `kepemilikan_a`
 --
 
 INSERT INTO `kepemilikan_a` (`id`, `kepemilikan_a`, `created_at`, `updated_at`) VALUES
@@ -917,7 +946,7 @@ INSERT INTO `kepemilikan_a` (`id`, `kepemilikan_a`, `created_at`, `updated_at`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kepemilikan_b`
+-- Struktur dari tabel `kepemilikan_b`
 --
 
 CREATE TABLE `kepemilikan_b` (
@@ -928,7 +957,7 @@ CREATE TABLE `kepemilikan_b` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `kepemilikan_b`
+-- Dumping data untuk tabel `kepemilikan_b`
 --
 
 INSERT INTO `kepemilikan_b` (`id`, `kepemilikan_b`, `created_at`, `updated_at`) VALUES
@@ -940,7 +969,7 @@ INSERT INTO `kepemilikan_b` (`id`, `kepemilikan_b`, `created_at`, `updated_at`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `klasifikasi`
+-- Struktur dari tabel `klasifikasi`
 --
 
 CREATE TABLE `klasifikasi` (
@@ -951,7 +980,7 @@ CREATE TABLE `klasifikasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `klasifikasi`
+-- Dumping data untuk tabel `klasifikasi`
 --
 
 INSERT INTO `klasifikasi` (`id`, `klasifikasi`, `created_at`, `updated_at`) VALUES
@@ -961,7 +990,7 @@ INSERT INTO `klasifikasi` (`id`, `klasifikasi`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kloset`
+-- Struktur dari tabel `kloset`
 --
 
 CREATE TABLE `kloset` (
@@ -972,7 +1001,7 @@ CREATE TABLE `kloset` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `kloset`
+-- Dumping data untuk tabel `kloset`
 --
 
 INSERT INTO `kloset` (`id`, `jenis_kloset`, `created_at`, `updated_at`) VALUES
@@ -984,7 +1013,31 @@ INSERT INTO `kloset` (`id`, `jenis_kloset`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kondisi`
+-- Struktur dari tabel `komentars`
+--
+
+CREATE TABLE `komentars` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `isi` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nama` varchar(255) NOT NULL DEFAULT 'Pengunjung'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `komentars`
+--
+
+INSERT INTO `komentars` (`id`, `isi`, `created_at`, `updated_at`, `nama`) VALUES
+(5, 'home cookies help fqas', '2025-07-16 02:05:03', '2025-07-16 02:05:03', 'ikkon'),
+(6, 'aku bersamamu', '2025-07-20 02:01:56', '2025-07-20 02:01:56', 'holong'),
+(7, 'kontak sp2 korano jaya akan selalu jaya', '2025-07-20 02:07:42', '2025-07-20 02:07:42', 'martin'),
+(9, 'pintasan kontak galeri komentar', '2025-07-29 16:51:00', '2025-07-29 16:51:00', 'test');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kondisi`
 --
 
 CREATE TABLE `kondisi` (
@@ -995,7 +1048,7 @@ CREATE TABLE `kondisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `kondisi`
+-- Dumping data untuk tabel `kondisi`
 --
 
 INSERT INTO `kondisi` (`id`, `kondisi`, `created_at`, `updated_at`) VALUES
@@ -1005,7 +1058,7 @@ INSERT INTO `kondisi` (`id`, `kondisi`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lokasiusaha`
+-- Struktur dari tabel `lokasiusaha`
 --
 
 CREATE TABLE `lokasiusaha` (
@@ -1016,7 +1069,7 @@ CREATE TABLE `lokasiusaha` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `lokasiusaha`
+-- Dumping data untuk tabel `lokasiusaha`
 --
 
 INSERT INTO `lokasiusaha` (`id`, `lokasi_usaha`, `created_at`, `updated_at`) VALUES
@@ -1026,7 +1079,7 @@ INSERT INTO `lokasiusaha` (`id`, `lokasi_usaha`, `created_at`, `updated_at`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -1036,7 +1089,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -1103,12 +1156,24 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (915, '2025_05_08_053746_create_foto_table', 7),
 (916, '2025_05_08_073911_create_fotos_table', 8),
 (917, '2025_05_09_010303_create_foto_table', 9),
-(918, '2025_05_09_045011_create_berita_table', 10);
+(919, '2025_05_09_045011_create_berita_table', 10),
+(920, '2025_07_08_070436_create_contact_table', 11),
+(921, '2025_07_08_085151_create_visimisi_table', 12),
+(922, '2025_07_08_233127_create_sejarah_table', 13),
+(923, '2025_07_08_234826_create_profil_table', 14),
+(924, '2025_07_08_235532_create_profildesa_table', 15),
+(925, '2025_07_09_060236_create_profildesa_table', 16),
+(926, '2025_07_09_065121_create_profil_table', 17),
+(927, '2025_07_09_072720_create_profil_table', 18),
+(928, '2025_07_11_064254_create_pertanahan_table', 19),
+(929, '2025_07_11_124440_create_pertanahan_table', 20),
+(930, '2025_07_16_095859_create_komentar_table', 21),
+(931, '2025_07_16_104834_add_nama_to_komentars_table', 22);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `npwp`
+-- Struktur dari tabel `npwp`
 --
 
 CREATE TABLE `npwp` (
@@ -1119,7 +1184,7 @@ CREATE TABLE `npwp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `npwp`
+-- Dumping data untuk tabel `npwp`
 --
 
 INSERT INTO `npwp` (`id`, `npwp`, `created_at`, `updated_at`) VALUES
@@ -1130,7 +1195,7 @@ INSERT INTO `npwp` (`id`, `npwp`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `omset`
+-- Struktur dari tabel `omset`
 --
 
 CREATE TABLE `omset` (
@@ -1141,7 +1206,7 @@ CREATE TABLE `omset` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `omset`
+-- Dumping data untuk tabel `omset`
 --
 
 INSERT INTO `omset` (`id`, `omset`, `created_at`, `updated_at`) VALUES
@@ -1153,7 +1218,7 @@ INSERT INTO `omset` (`id`, `omset`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `partisipasi`
+-- Struktur dari tabel `partisipasi`
 --
 
 CREATE TABLE `partisipasi` (
@@ -1164,7 +1229,7 @@ CREATE TABLE `partisipasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `partisipasi`
+-- Dumping data untuk tabel `partisipasi`
 --
 
 INSERT INTO `partisipasi` (`id`, `partisipasi`, `created_at`, `updated_at`) VALUES
@@ -1175,7 +1240,7 @@ INSERT INTO `partisipasi` (`id`, `partisipasi`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -1187,7 +1252,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pekerjaanutama`
+-- Struktur dari tabel `pekerjaanutama`
 --
 
 CREATE TABLE `pekerjaanutama` (
@@ -1198,7 +1263,7 @@ CREATE TABLE `pekerjaanutama` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pekerjaanutama`
+-- Dumping data untuk tabel `pekerjaanutama`
 --
 
 INSERT INTO `pekerjaanutama` (`id`, `pekerjaan_utama`, `created_at`, `updated_at`) VALUES
@@ -1228,7 +1293,7 @@ INSERT INTO `pekerjaanutama` (`id`, `pekerjaan_utama`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendidikan`
+-- Struktur dari tabel `pendidikan`
 --
 
 CREATE TABLE `pendidikan` (
@@ -1239,7 +1304,7 @@ CREATE TABLE `pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pendidikan`
+-- Dumping data untuk tabel `pendidikan`
 --
 
 INSERT INTO `pendidikan` (`id`, `pendidikan`, `created_at`, `updated_at`) VALUES
@@ -1254,7 +1319,7 @@ INSERT INTO `pendidikan` (`id`, `pendidikan`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penggunaaninternet`
+-- Struktur dari tabel `penggunaaninternet`
 --
 
 CREATE TABLE `penggunaaninternet` (
@@ -1265,7 +1330,7 @@ CREATE TABLE `penggunaaninternet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `penggunaaninternet`
+-- Dumping data untuk tabel `penggunaaninternet`
 --
 
 INSERT INTO `penggunaaninternet` (`id`, `penggunaan_internet`, `created_at`, `updated_at`) VALUES
@@ -1280,7 +1345,7 @@ INSERT INTO `penggunaaninternet` (`id`, `penggunaan_internet`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penyakitkronis`
+-- Struktur dari tabel `penyakitkronis`
 --
 
 CREATE TABLE `penyakitkronis` (
@@ -1291,7 +1356,7 @@ CREATE TABLE `penyakitkronis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `penyakitkronis`
+-- Dumping data untuk tabel `penyakitkronis`
 --
 
 INSERT INTO `penyakitkronis` (`id`, `penyakit_kronis`, `created_at`, `updated_at`) VALUES
@@ -1309,7 +1374,7 @@ INSERT INTO `penyakitkronis` (`id`, `penyakit_kronis`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perolehminum`
+-- Struktur dari tabel `perolehminum`
 --
 
 CREATE TABLE `perolehminum` (
@@ -1320,7 +1385,7 @@ CREATE TABLE `perolehminum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `perolehminum`
+-- Dumping data untuk tabel `perolehminum`
 --
 
 INSERT INTO `perolehminum` (`id`, `peroleh_minum`, `created_at`, `updated_at`) VALUES
@@ -1331,7 +1396,7 @@ INSERT INTO `perolehminum` (`id`, `peroleh_minum`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Struktur dari tabel `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -1350,7 +1415,23 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pilihan`
+-- Struktur dari tabel `pertanahans`
+--
+
+CREATE TABLE `pertanahans` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `kategori` varchar(255) NOT NULL,
+  `sub_kategori` varchar(255) NOT NULL,
+  `uraian` varchar(255) NOT NULL,
+  `jumlah` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pilihan`
 --
 
 CREATE TABLE `pilihan` (
@@ -1361,7 +1442,7 @@ CREATE TABLE `pilihan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pilihan`
+-- Dumping data untuk tabel `pilihan`
 --
 
 INSERT INTO `pilihan` (`id`, `pilihan`, `created_at`, `updated_at`) VALUES
@@ -1373,7 +1454,7 @@ INSERT INTO `pilihan` (`id`, `pilihan`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Struktur dari tabel `products`
 --
 
 CREATE TABLE `products` (
@@ -1390,7 +1471,108 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `provinsi`
+-- Struktur dari tabel `profils`
+--
+
+CREATE TABLE `profils` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `kategori` varchar(255) NOT NULL,
+  `sub_kategori` varchar(255) NOT NULL,
+  `uraian` varchar(255) NOT NULL,
+  `jumlah` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `profils`
+--
+
+INSERT INTO `profils` (`id`, `kategori`, `sub_kategori`, `uraian`, `jumlah`, `created_at`, `updated_at`) VALUES
+(3, 'UMUM', 'Wilayah', 'Luas Kampung (Ha)', '450', '2025-07-08 23:43:55', '2025-07-08 23:43:55'),
+(4, 'PERTANAHAN', 'Peruntukan', 'Jalan (Km)', '15', '2025-07-08 23:44:12', '2025-07-08 23:44:12'),
+(5, 'PERTANAHAN', 'Peruntukan', 'Ladang (Ha)', '20', '2025-07-08 23:44:23', '2025-07-08 23:44:23'),
+(6, 'PERTANAHAN', 'Peruntukan', 'Bangunan (Ha)', '175', '2025-07-08 23:44:35', '2025-07-08 23:44:35'),
+(7, 'PERTANAHAN', 'Peruntukan', 'Pemukiman (Ha)', '175', '2025-07-08 23:44:46', '2025-07-08 23:44:46'),
+(8, 'PERTANAHAN', 'Peruntukan', 'Pekuburan (Ha)', '1', '2025-07-08 23:44:55', '2025-07-08 23:44:55'),
+(9, 'PERTANAHAN', 'Penggunaan', 'Industri (Ha)', '0', '2025-07-08 23:45:11', '2025-07-08 23:45:11'),
+(10, 'PERTANAHAN', 'Penggunaan', 'Pertokoan (Ha)', '10', '2025-07-08 23:45:22', '2025-07-08 23:45:22'),
+(11, 'PERTANAHAN', 'Penggunaan', 'Pertanian (Ha)', '63', '2025-07-08 23:46:28', '2025-07-08 23:46:28'),
+(12, 'PERTANAHAN', 'Penggunaan', 'Pasar Desa (Ha)', '2', '2025-07-08 23:46:39', '2025-07-08 23:46:39'),
+(13, 'PERTANAHAN', 'Penggunaan', 'Hutan Sagu (Ha)', '0', '2025-07-08 23:46:51', '2025-07-08 23:46:51'),
+(14, 'PERTANAHAN', 'Penggunaan', 'Perladangan (Ha)', '20', '2025-07-08 23:47:03', '2025-07-08 23:47:03'),
+(15, 'PERTANAHAN', 'Penggunaan', 'Perkebunan Negara (Ha)', '0', '2025-07-08 23:47:18', '2025-07-08 23:47:18'),
+(16, 'PERTANAHAN', 'Penggunaan', 'Perkebunan Swasta (Ha)', '0', '2025-07-08 23:47:25', '2025-07-08 23:47:25'),
+(17, 'PERTANAHAN', 'Penggunaan', 'Perkebunan Rakyat (Ha)', '0', '2025-07-08 23:47:33', '2025-07-08 23:47:33'),
+(18, 'PERTANAHAN', 'Penggunaan', 'Hutan (Ha)', '350', '2025-07-08 23:48:36', '2025-07-08 23:48:36'),
+(19, 'PERTANAHAN', 'Penggunaan', 'Rawa (Ha)', '0', '2025-07-08 23:48:45', '2025-07-08 23:48:45'),
+(20, 'KEPENDUDUKAN', 'Jenis Kelamin', 'Laki-laki (Orang)', '715', '2025-07-08 23:49:02', '2025-07-08 23:49:02'),
+(21, 'KEPENDUDUKAN', 'Jenis Kelamin', 'Perempuan (Orang)', '520', '2025-07-08 23:49:14', '2025-07-08 23:49:14'),
+(22, 'KEPENDUDUKAN', 'Kepala Rumah Tangga', 'Kepala Rumah Tangga (Orang)', '305', '2025-07-08 23:49:25', '2025-07-08 23:49:25'),
+(23, 'KEPENDUDUKAN', 'Agama', 'Islam (Orang)', '924', '2025-07-08 23:49:35', '2025-07-10 17:03:27'),
+(24, 'KEPENDUDUKAN', 'Agama', 'Kristen (Orang)', '157', '2025-07-08 23:49:46', '2025-07-08 23:49:46'),
+(25, 'KEPENDUDUKAN', 'Agama', 'Katolik (Orang)', '54', '2025-07-08 23:49:57', '2025-07-08 23:49:57'),
+(26, 'KEPENDUDUKAN', 'Agama', 'Hindu (Orang)', '0', '2025-07-08 23:50:08', '2025-07-08 23:50:08'),
+(27, 'KEPENDUDUKAN', 'Agama', 'Budha (Orang)', '0', '2025-07-08 23:50:16', '2025-07-08 23:50:16'),
+(28, 'KEPENDUDUKAN', 'Agama', 'Konghucu (Orang)', '0', '2025-07-08 23:50:24', '2025-07-08 23:50:24'),
+(29, 'KEPENDUDUKAN', 'Kelompok Pendidikan', 'Umur 0-3 tahun (Orang)', '38', '2025-07-08 23:50:36', '2025-07-08 23:50:36'),
+(30, 'KEPENDUDUKAN', 'Kelompok Pendidikan', 'Umur 4-6 tahun (Orang)', '84', '2025-07-08 23:50:45', '2025-07-08 23:50:45'),
+(31, 'KEPENDUDUKAN', 'Kelompok Pendidikan', 'Umur 7-12 tahun (Orang)', '140', '2025-07-08 23:50:56', '2025-07-08 23:50:56'),
+(32, 'KEPENDUDUKAN', 'Kelompok Pendidikan', 'Umur 13-15 tahun (Orang)', '91', '2025-07-08 23:51:08', '2025-07-08 23:51:08'),
+(33, 'KEPENDUDUKAN', 'Kelompok Pendidikan', 'Umur 16-18 tahun (Orang)', '82', '2025-07-08 23:51:22', '2025-07-08 23:51:22'),
+(34, 'KEPENDUDUKAN', 'Kelompok Pendidikan', 'Umur 19+ tahun (Orang)', '700', '2025-07-08 23:51:31', '2025-07-08 23:51:31'),
+(35, 'KEPENDUDUKAN', 'Kelompok Tenaga Kerja', 'Umur 10-14 tahun (Orang)', '0', '2025-07-08 23:51:47', '2025-07-08 23:51:47'),
+(36, 'KEPENDUDUKAN', 'Kelompok Tenaga Kerja', 'Umur 15-19 tahun (Orang)', '0', '2025-07-08 23:51:53', '2025-07-08 23:51:53'),
+(37, 'KEPENDUDUKAN', 'Kelompok Tenaga Kerja', 'Umur 20-26 tahun (Orang)', '215', '2025-07-08 23:52:02', '2025-07-08 23:52:02'),
+(38, 'KEPENDUDUKAN', 'Kelompok Tenaga Kerja', 'Umur 27-59 tahun (Orang)', '418', '2025-07-08 23:52:16', '2025-07-08 23:52:16'),
+(39, 'KEPENDUDUKAN', 'Kelompok Tenaga Kerja', 'Umur 60+ tahun (Orang)', '92', '2025-07-08 23:52:25', '2025-07-08 23:52:25'),
+(40, 'KEPENDUDUKAN', 'Pendidikan', 'SD (Orang)', '1', '2025-07-08 23:53:00', '2025-07-15 00:29:37'),
+(41, 'KEPENDUDUKAN', 'Pendidikan', 'SMP (Orang)', '0', '2025-07-08 23:53:53', '2025-07-08 23:53:53'),
+(42, 'KEPENDUDUKAN', 'Pendidikan', 'SMA/SMK/STM (Orang)', '0', '2025-07-08 23:53:59', '2025-07-08 23:53:59'),
+(43, 'KEPENDUDUKAN', 'Pendidikan', 'D1/D2/D3 (Orang)', '0', '2025-07-08 23:54:09', '2025-07-08 23:54:09'),
+(44, 'KEPENDUDUKAN', 'Pendidikan', 'S1/S2/S3 (Orang)', '0', '2025-07-08 23:54:15', '2025-07-08 23:54:15'),
+(45, 'KEPENDUDUKAN', 'Pekerjaan', 'PNS (Orang)', '46', '2025-07-08 23:54:58', '2025-07-29 17:12:23'),
+(46, 'KEPENDUDUKAN', 'Pekerjaan', 'TNI/POLRI (Orang)', '35', '2025-07-08 23:55:08', '2025-07-08 23:55:08'),
+(47, 'KEPENDUDUKAN', 'Pekerjaan', 'Swasta (Orang)', '0', '2025-07-08 23:55:21', '2025-07-08 23:55:21'),
+(48, 'KEPENDUDUKAN', 'Pekerjaan', 'Tani (Orang)', '84', '2025-07-08 23:55:58', '2025-07-08 23:55:58'),
+(49, 'KEPENDUDUKAN', 'Pekerjaan', 'Wiraswasta (Orang)', '0', '2025-07-08 23:56:10', '2025-07-08 23:56:10'),
+(50, 'KEPENDUDUKAN', 'Pekerjaan', 'Pertukangan (Orang)', '40', '2025-07-08 23:56:25', '2025-07-08 23:56:25'),
+(51, 'KEPENDUDUKAN', 'Pekerjaan', 'Nelayan (Orang)', '80', '2025-07-08 23:56:36', '2025-07-08 23:56:36'),
+(52, 'KEPENDUDUKAN', 'Pekerjaan', 'Pensiunan (Orang)', '4', '2025-07-08 23:56:45', '2025-07-08 23:56:45'),
+(53, 'KEPENDUDUKAN', 'Pekerjaan', 'Jasa (Orang)', '0', '2025-07-08 23:56:53', '2025-07-08 23:56:53'),
+(54, 'KEPENDUDUKAN', 'Mobilitas', 'Lahir Laki-laki (Orang)', '4', '2025-07-08 23:57:12', '2025-07-24 16:27:10'),
+(55, 'KEPENDUDUKAN', 'Mobilitas', 'Lahir Perempuan (Orang)', '0', '2025-07-08 23:57:57', '2025-07-08 23:57:57'),
+(56, 'KEPENDUDUKAN', 'Mobilitas', 'Mati Laki-laki (Orang)', '0', '2025-07-08 23:58:06', '2025-07-08 23:58:06'),
+(57, 'KEPENDUDUKAN', 'Mobilitas', 'Mati Perempuan (Orang)', '0', '2025-07-08 23:58:13', '2025-07-08 23:58:13'),
+(58, 'KEPENDUDUKAN', 'Mobilitas', 'Datang Laki-laki (Orang)', '0', '2025-07-08 23:58:21', '2025-07-08 23:58:21'),
+(59, 'KEPENDUDUKAN', 'Mobilitas', 'Datang Perempuan (Orang)', '0', '2025-07-08 23:58:28', '2025-07-08 23:58:28'),
+(60, 'BIDANG PEMBANGUNAN', 'Sarana Ibadah', 'Masjid (Buah)', '1', '2025-07-08 23:58:43', '2025-07-08 23:58:43'),
+(61, 'BIDANG PEMBANGUNAN', 'Sarana Ibadah', 'Gereja (Buah)', '2', '2025-07-08 23:58:58', '2025-07-08 23:58:58'),
+(62, 'BIDANG PEMBANGUNAN', 'Sarana Ibadah', 'Vihara (Buah)', '0', '2025-07-08 23:59:07', '2025-07-08 23:59:07'),
+(63, 'BIDANG PEMBANGUNAN', 'Sarana Ibadah', 'Pura (Buah)', '0', '2025-07-08 23:59:14', '2025-07-08 23:59:14'),
+(64, 'BIDANG PEMBANGUNAN', 'Sarana Kesehatan', 'Puskesmas (Buah)', '0', '2025-07-08 23:59:26', '2025-07-08 23:59:26'),
+(65, 'BIDANG PEMBANGUNAN', 'Sarana Kesehatan', 'Pustu (Buah)', '0', '2025-07-08 23:59:37', '2025-07-08 23:59:37'),
+(66, 'BIDANG PEMBANGUNAN', 'Sarana Kesehatan', 'Apotek (Buah)', '1', '2025-07-08 23:59:48', '2025-07-08 23:59:48'),
+(67, 'BIDANG PEMBANGUNAN', 'Sarana Pendidikan', 'TK (Buah)', '3', '2025-07-09 00:00:00', '2025-07-09 00:00:00'),
+(68, 'BIDANG PEMBANGUNAN', 'Sarana Pendidikan', 'SD (Buah)', '1', '2025-07-09 00:00:11', '2025-07-09 00:00:11'),
+(69, 'BIDANG PEMBANGUNAN', 'Sarana Pendidikan', 'SMP (Buah)', '1', '2025-07-09 00:00:18', '2025-07-09 00:00:18'),
+(70, 'BIDANG PEMBANGUNAN', 'Sarana Pendidikan', 'SMA (Buah)', '0', '2025-07-09 00:00:26', '2025-07-09 00:00:26'),
+(71, 'BIDANG PEMBANGUNAN', 'Sarana Olahraga', 'Lapangan Sepakbola (Buah)', '1', '2025-07-09 00:00:38', '2025-07-09 00:00:38'),
+(72, 'BIDANG PEMBANGUNAN', 'Sarana Olahraga', 'Lapangan Voli (Buah)', '2', '2025-07-09 00:00:44', '2025-07-09 00:00:44'),
+(73, 'BIDANG PEMBANGUNAN', 'Sarana Olahraga', 'Lapangan Bulutangkis (Buah)', '0', '2025-07-09 00:00:51', '2025-07-09 00:00:51'),
+(74, 'BIDANG PEMBANGUNAN', 'Sarana Transportasi', 'Sepeda Motor (Unit)', '1020', '2025-07-09 00:01:00', '2025-07-09 00:01:00'),
+(75, 'BIDANG PEMBANGUNAN', 'Sarana Transportasi', 'Sampan (Unit)', '41', '2025-07-09 00:01:08', '2025-07-09 00:01:56'),
+(76, 'BIDANG PEMBANGUNAN', 'Sarana Transportasi', 'Mobil (Unit)', '60', '2025-07-09 00:01:50', '2025-07-09 00:01:50'),
+(77, 'BIDANG PEMBANGUNAN', 'Sarana Transportasi', 'Ketinting (Unit)', '4', '2025-07-09 00:02:06', '2025-07-09 00:02:06'),
+(78, 'BIDANG PEMBANGUNAN', 'Sarana Transportasi', 'Longboat (Unit)', '34', '2025-07-09 00:02:17', '2025-07-09 00:02:17'),
+(79, 'BIDANG PEMBANGUNAN', 'Sarana Transportasi', 'Speedboat (Unit)', '1', '2025-07-09 00:02:28', '2025-07-09 00:02:28'),
+(80, 'KEPENDUDUKAN', 'Mobilitas', 'Pergi Laki-laki (Orang)', '0', '2025-07-09 21:02:33', '2025-07-09 21:02:33'),
+(81, 'KEPENDUDUKAN', 'Mobilitas', 'Pergi Perempuan (Orang)', '0', '2025-07-09 21:02:40', '2025-07-09 21:02:40');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `provinsi`
 --
 
 CREATE TABLE `provinsi` (
@@ -1401,7 +1583,7 @@ CREATE TABLE `provinsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `provinsi`
+-- Dumping data untuk tabel `provinsi`
 --
 
 INSERT INTO `provinsi` (`id`, `nama_prov`, `created_at`, `updated_at`) VALUES
@@ -1410,7 +1592,20 @@ INSERT INTO `provinsi` (`id`, `nama_prov`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `statuskawin`
+-- Struktur dari tabel `sejarahs`
+--
+
+CREATE TABLE `sejarahs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `sejarah` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `statuskawin`
 --
 
 CREATE TABLE `statuskawin` (
@@ -1421,7 +1616,7 @@ CREATE TABLE `statuskawin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `statuskawin`
+-- Dumping data untuk tabel `statuskawin`
 --
 
 INSERT INTO `statuskawin` (`id`, `status_kawin`, `created_at`, `updated_at`) VALUES
@@ -1433,7 +1628,7 @@ INSERT INTO `statuskawin` (`id`, `status_kawin`, `created_at`, `updated_at`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `statuskerja`
+-- Struktur dari tabel `statuskerja`
 --
 
 CREATE TABLE `statuskerja` (
@@ -1444,7 +1639,7 @@ CREATE TABLE `statuskerja` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `statuskerja`
+-- Dumping data untuk tabel `statuskerja`
 --
 
 INSERT INTO `statuskerja` (`id`, `status_kerja`, `created_at`, `updated_at`) VALUES
@@ -1460,7 +1655,7 @@ INSERT INTO `statuskerja` (`id`, `status_kerja`, `created_at`, `updated_at`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `suku`
+-- Struktur dari tabel `suku`
 --
 
 CREATE TABLE `suku` (
@@ -1471,7 +1666,7 @@ CREATE TABLE `suku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `suku`
+-- Dumping data untuk tabel `suku`
 --
 
 INSERT INTO `suku` (`id`, `suku`, `created_at`, `updated_at`) VALUES
@@ -1496,7 +1691,7 @@ INSERT INTO `suku` (`id`, `suku`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sumberminum`
+-- Struktur dari tabel `sumberminum`
 --
 
 CREATE TABLE `sumberminum` (
@@ -1507,7 +1702,7 @@ CREATE TABLE `sumberminum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sumberminum`
+-- Dumping data untuk tabel `sumberminum`
 --
 
 INSERT INTO `sumberminum` (`id`, `sumber_minum`, `created_at`, `updated_at`) VALUES
@@ -1526,7 +1721,7 @@ INSERT INTO `sumberminum` (`id`, `sumber_minum`, `created_at`, `updated_at`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sumberpenerangan`
+-- Struktur dari tabel `sumberpenerangan`
 --
 
 CREATE TABLE `sumberpenerangan` (
@@ -1537,7 +1732,7 @@ CREATE TABLE `sumberpenerangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sumberpenerangan`
+-- Dumping data untuk tabel `sumberpenerangan`
 --
 
 INSERT INTO `sumberpenerangan` (`id`, `sumber_penerangan`, `created_at`, `updated_at`) VALUES
@@ -1548,7 +1743,7 @@ INSERT INTO `sumberpenerangan` (`id`, `sumber_penerangan`, `created_at`, `update
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tpa`
+-- Struktur dari tabel `tpa`
 --
 
 CREATE TABLE `tpa` (
@@ -1559,7 +1754,7 @@ CREATE TABLE `tpa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `tpa`
+-- Dumping data untuk tabel `tpa`
 --
 
 INSERT INTO `tpa` (`id`, `tpa`, `created_at`, `updated_at`) VALUES
@@ -1573,7 +1768,7 @@ INSERT INTO `tpa` (`id`, `tpa`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -1584,7 +1779,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id`, `transaksi`, `created_at`, `updated_at`) VALUES
@@ -1595,7 +1790,7 @@ INSERT INTO `transaksi` (`id`, `transaksi`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -1610,7 +1805,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `role`, `kecamatan_id`, `username`, `password`, `created_at`, `updated_at`) VALUES
@@ -1623,12 +1818,33 @@ INSERT INTO `user` (`id`, `name`, `role`, `kecamatan_id`, `username`, `password`
 (8, 'martin simamora', '1', '20', 'martin', '$2y$10$QoxATITyom9eO5Tn7AZXA.eaP1iCnMK/BFLd0GE75Nogz1gGCGaPu', '2025-04-28 23:35:59', '2025-04-28 23:35:59'),
 (9, 'ajeng', '1', '80', 'ajeng', '$2y$10$exYgmBJ.eER4eWAdIAZoa.06qe2IUSfjAmZrU3zHzfyCAPbdIaegS', '2025-05-01 23:32:08', '2025-05-01 23:32:08'),
 (10, 'cobas', '1', '20', 'cobas', '$2y$10$khnF/sAePM/xzXVYxstpa.QtYSrpvpE1t3OJAnoNdz/4/65SBAF5C', '2025-06-02 14:43:54', '2025-06-02 14:43:54'),
-(11, 'yusuf', '1', '20', 'yusuf', '$2y$10$kQhXmqmcpDGMcQwIgBoobuSnBX.b7.rALN6b4sVvcT4GIA6oTd29W', '2025-06-02 17:17:36', '2025-06-02 17:17:36');
+(11, 'yusuf', '1', '20', 'yusuf', '$2y$10$kQhXmqmcpDGMcQwIgBoobuSnBX.b7.rALN6b4sVvcT4GIA6oTd29W', '2025-06-02 17:17:36', '2025-06-02 17:17:36'),
+(12, 'test', '1', '20', 'test', '$2y$10$4BJ9BV7.X/c3WDpDx2nGeuUWyT1OdTq78doFRhmjvxuZWhaJXLT9y', '2025-07-20 02:34:13', '2025-07-20 02:34:13');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `warga`
+-- Struktur dari tabel `visimisis`
+--
+
+CREATE TABLE `visimisis` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `konten` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `visimisis`
+--
+
+INSERT INTO `visimisis` (`id`, `konten`, `created_at`, `updated_at`) VALUES
+(1, 'Visi Kampung: Mewujudkan masyarakat sejahtera...', '2025-07-08 00:30:06', '2025-07-08 00:30:06');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `warga`
 --
 
 CREATE TABLE `warga` (
@@ -1707,7 +1923,7 @@ CREATE TABLE `warga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `warga`
+-- Dumping data untuk tabel `warga`
 --
 
 INSERT INTO `warga` (`id`, `provinsi_id`, `kabupaten_id`, `kecamatan_id`, `desa_kel_id`, `klasifikasi_id`, `nama_dusun`, `kode_sls`, `nama_sls`, `alamat`, `lattitude`, `jenis_lintang_id`, `longitude`, `nubtt`, `no_kk`, `nukhp`, `kepala_keluarga`, `jumlah_anggota`, `tanggal_cacah`, `nama_cacah`, `kode_cacah`, `tgl_periksa`, `nama_periksa`, `kode_periksa`, `hasilcacah_id`, `kepemilikan_a_id`, `kepemilikan_b_id`, `luas_lantai`, `jenislantai_id`, `jenis_dinding_id`, `kondisi_dinding_id`, `jenis_atap_id`, `kondisi_atap_id`, `jumlah_kamar`, `sumber_minum_id`, `peroleh_minum_id`, `penerangan_id`, `daya_id`, `bahanmasak_id`, `fasilitasmasak_id`, `kloset_id`, `tpa_id`, `pekerjaan`, `kode_lapangan_usaha`, `pendapatan`, `gas_id`, `lemari_id`, `ac_id`, `pemanas_id`, `pstn_id`, `tv_id`, `emas_id`, `laptop_id`, `sepeda_id`, `motor_id`, `mobil_id`, `perahu_id`, `motortempel_id`, `perahumotor_id`, `kapal_id`, `nomor_hp`, `jumlah_tv`, `lahan_id`, `lahan_meter`, `rumahlain_id`, `sapi`, `kerbau`, `kuda`, `babi`, `kambing`, `created_at`, `updated_at`) VALUES
@@ -1719,290 +1935,302 @@ INSERT INTO `warga` (`id`, `provinsi_id`, `kabupaten_id`, `kecamatan_id`, `desa_
 --
 
 --
--- Indexes for table `agama`
+-- Indeks untuk tabel `agama`
 --
 ALTER TABLE `agama`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bahanbakarmasak`
+-- Indeks untuk tabel `bahanbakarmasak`
 --
 ALTER TABLE `bahanbakarmasak`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bansos`
+-- Indeks untuk tabel `bansos`
 --
 ALTER TABLE `bansos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `beritas`
+-- Indeks untuk tabel `beritas`
 --
 ALTER TABLE `beritas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `blok6`
+-- Indeks untuk tabel `blok6`
 --
 ALTER TABLE `blok6`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `blok7`
+-- Indeks untuk tabel `blok7`
 --
 ALTER TABLE `blok7`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bukunikah`
+-- Indeks untuk tabel `bukunikah`
 --
 ALTER TABLE `bukunikah`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cacat`
+-- Indeks untuk tabel `cacat`
 --
 ALTER TABLE `cacat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `daya`
+-- Indeks untuk tabel `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `daya`
 --
 ALTER TABLE `daya`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `desa_kelurahan`
+-- Indeks untuk tabel `desa_kelurahan`
 --
 ALTER TABLE `desa_kelurahan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `domisili`
+-- Indeks untuk tabel `domisili`
 --
 ALTER TABLE `domisili`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `fasilitasmasak`
+-- Indeks untuk tabel `fasilitasmasak`
 --
 ALTER TABLE `fasilitasmasak`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `fotos`
+-- Indeks untuk tabel `fotos`
 --
 ALTER TABLE `fotos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `gizi`
+-- Indeks untuk tabel `gizi`
 --
 ALTER TABLE `gizi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `goldar`
+-- Indeks untuk tabel `goldar`
 --
 ALTER TABLE `goldar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hakmiliksertif`
+-- Indeks untuk tabel `hakmiliksertif`
 --
 ALTER TABLE `hakmiliksertif`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hasilcacah`
+-- Indeks untuk tabel `hasilcacah`
 --
 ALTER TABLE `hasilcacah`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hubungankeluarga`
+-- Indeks untuk tabel `hubungankeluarga`
 --
 ALTER TABLE `hubungankeluarga`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `identitas`
+-- Indeks untuk tabel `identitas`
 --
 ALTER TABLE `identitas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jenisatap`
+-- Indeks untuk tabel `jenisatap`
 --
 ALTER TABLE `jenisatap`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jenisdinding`
+-- Indeks untuk tabel `jenisdinding`
 --
 ALTER TABLE `jenisdinding`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jenislahan`
+-- Indeks untuk tabel `jenislahan`
 --
 ALTER TABLE `jenislahan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jenislantai`
+-- Indeks untuk tabel `jenislantai`
 --
 ALTER TABLE `jenislantai`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jenislintang`
+-- Indeks untuk tabel `jenislintang`
 --
 ALTER TABLE `jenislintang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `jk`
+-- Indeks untuk tabel `jk`
 --
 ALTER TABLE `jk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kabupaten`
+-- Indeks untuk tabel `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kb`
+-- Indeks untuk tabel `kb`
 --
 ALTER TABLE `kb`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `keberadaankeluarga`
+-- Indeks untuk tabel `keberadaankeluarga`
 --
 ALTER TABLE `keberadaankeluarga`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `keberadaansppt`
+-- Indeks untuk tabel `keberadaansppt`
 --
 ALTER TABLE `keberadaansppt`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kecamatan`
+-- Indeks untuk tabel `kecamatan`
 --
 ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kepemilikan_a`
+-- Indeks untuk tabel `kepemilikan_a`
 --
 ALTER TABLE `kepemilikan_a`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kepemilikan_b`
+-- Indeks untuk tabel `kepemilikan_b`
 --
 ALTER TABLE `kepemilikan_b`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `klasifikasi`
+-- Indeks untuk tabel `klasifikasi`
 --
 ALTER TABLE `klasifikasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kloset`
+-- Indeks untuk tabel `kloset`
 --
 ALTER TABLE `kloset`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kondisi`
+-- Indeks untuk tabel `komentars`
+--
+ALTER TABLE `komentars`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `kondisi`
 --
 ALTER TABLE `kondisi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `lokasiusaha`
+-- Indeks untuk tabel `lokasiusaha`
 --
 ALTER TABLE `lokasiusaha`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `npwp`
+-- Indeks untuk tabel `npwp`
 --
 ALTER TABLE `npwp`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `omset`
+-- Indeks untuk tabel `omset`
 --
 ALTER TABLE `omset`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `partisipasi`
+-- Indeks untuk tabel `partisipasi`
 --
 ALTER TABLE `partisipasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `pekerjaanutama`
+-- Indeks untuk tabel `pekerjaanutama`
 --
 ALTER TABLE `pekerjaanutama`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pendidikan`
+-- Indeks untuk tabel `pendidikan`
 --
 ALTER TABLE `pendidikan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `penggunaaninternet`
+-- Indeks untuk tabel `penggunaaninternet`
 --
 ALTER TABLE `penggunaaninternet`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `penyakitkronis`
+-- Indeks untuk tabel `penyakitkronis`
 --
 ALTER TABLE `penyakitkronis`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `perolehminum`
+-- Indeks untuk tabel `perolehminum`
 --
 ALTER TABLE `perolehminum`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -2010,431 +2238,492 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `pilihan`
+-- Indeks untuk tabel `pertanahans`
+--
+ALTER TABLE `pertanahans`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `pertanahan_uraian_unique` (`uraian`);
+
+--
+-- Indeks untuk tabel `pilihan`
 --
 ALTER TABLE `pilihan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
+-- Indeks untuk tabel `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `provinsi`
+-- Indeks untuk tabel `profils`
+--
+ALTER TABLE `profils`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `statuskawin`
+-- Indeks untuk tabel `sejarahs`
+--
+ALTER TABLE `sejarahs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `statuskawin`
 --
 ALTER TABLE `statuskawin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `statuskerja`
+-- Indeks untuk tabel `statuskerja`
 --
 ALTER TABLE `statuskerja`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `suku`
+-- Indeks untuk tabel `suku`
 --
 ALTER TABLE `suku`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sumberminum`
+-- Indeks untuk tabel `sumberminum`
 --
 ALTER TABLE `sumberminum`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sumberpenerangan`
+-- Indeks untuk tabel `sumberpenerangan`
 --
 ALTER TABLE `sumberpenerangan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tpa`
+-- Indeks untuk tabel `tpa`
 --
 ALTER TABLE `tpa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `warga`
+-- Indeks untuk tabel `visimisis`
+--
+ALTER TABLE `visimisis`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `warga`
 --
 ALTER TABLE `warga`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `agama`
+-- AUTO_INCREMENT untuk tabel `agama`
 --
 ALTER TABLE `agama`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `bahanbakarmasak`
+-- AUTO_INCREMENT untuk tabel `bahanbakarmasak`
 --
 ALTER TABLE `bahanbakarmasak`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `bansos`
+-- AUTO_INCREMENT untuk tabel `bansos`
 --
 ALTER TABLE `bansos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
--- AUTO_INCREMENT for table `beritas`
+-- AUTO_INCREMENT untuk tabel `beritas`
 --
 ALTER TABLE `beritas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `blok6`
+-- AUTO_INCREMENT untuk tabel `blok6`
 --
 ALTER TABLE `blok6`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=196;
 
 --
--- AUTO_INCREMENT for table `blok7`
+-- AUTO_INCREMENT untuk tabel `blok7`
 --
 ALTER TABLE `blok7`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
--- AUTO_INCREMENT for table `bukunikah`
+-- AUTO_INCREMENT untuk tabel `bukunikah`
 --
 ALTER TABLE `bukunikah`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `cacat`
+-- AUTO_INCREMENT untuk tabel `cacat`
 --
 ALTER TABLE `cacat`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `daya`
+-- AUTO_INCREMENT untuk tabel `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `daya`
 --
 ALTER TABLE `daya`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `desa_kelurahan`
+-- AUTO_INCREMENT untuk tabel `desa_kelurahan`
 --
 ALTER TABLE `desa_kelurahan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `domisili`
+-- AUTO_INCREMENT untuk tabel `domisili`
 --
 ALTER TABLE `domisili`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `fasilitasmasak`
+-- AUTO_INCREMENT untuk tabel `fasilitasmasak`
 --
 ALTER TABLE `fasilitasmasak`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `fotos`
+-- AUTO_INCREMENT untuk tabel `fotos`
 --
 ALTER TABLE `fotos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `gizi`
+-- AUTO_INCREMENT untuk tabel `gizi`
 --
 ALTER TABLE `gizi`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `goldar`
+-- AUTO_INCREMENT untuk tabel `goldar`
 --
 ALTER TABLE `goldar`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `hakmiliksertif`
+-- AUTO_INCREMENT untuk tabel `hakmiliksertif`
 --
 ALTER TABLE `hakmiliksertif`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `hasilcacah`
+-- AUTO_INCREMENT untuk tabel `hasilcacah`
 --
 ALTER TABLE `hasilcacah`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `hubungankeluarga`
+-- AUTO_INCREMENT untuk tabel `hubungankeluarga`
 --
 ALTER TABLE `hubungankeluarga`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `identitas`
+-- AUTO_INCREMENT untuk tabel `identitas`
 --
 ALTER TABLE `identitas`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `jenisatap`
+-- AUTO_INCREMENT untuk tabel `jenisatap`
 --
 ALTER TABLE `jenisatap`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `jenisdinding`
+-- AUTO_INCREMENT untuk tabel `jenisdinding`
 --
 ALTER TABLE `jenisdinding`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `jenislahan`
+-- AUTO_INCREMENT untuk tabel `jenislahan`
 --
 ALTER TABLE `jenislahan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `jenislantai`
+-- AUTO_INCREMENT untuk tabel `jenislantai`
 --
 ALTER TABLE `jenislantai`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `jenislintang`
+-- AUTO_INCREMENT untuk tabel `jenislintang`
 --
 ALTER TABLE `jenislintang`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `jk`
+-- AUTO_INCREMENT untuk tabel `jk`
 --
 ALTER TABLE `jk`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kabupaten`
+-- AUTO_INCREMENT untuk tabel `kabupaten`
 --
 ALTER TABLE `kabupaten`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `kb`
+-- AUTO_INCREMENT untuk tabel `kb`
 --
 ALTER TABLE `kb`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `keberadaankeluarga`
+-- AUTO_INCREMENT untuk tabel `keberadaankeluarga`
 --
 ALTER TABLE `keberadaankeluarga`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `keberadaansppt`
+-- AUTO_INCREMENT untuk tabel `keberadaansppt`
 --
 ALTER TABLE `keberadaansppt`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kecamatan`
+-- AUTO_INCREMENT untuk tabel `kecamatan`
 --
 ALTER TABLE `kecamatan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
--- AUTO_INCREMENT for table `kepemilikan_a`
+-- AUTO_INCREMENT untuk tabel `kepemilikan_a`
 --
 ALTER TABLE `kepemilikan_a`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `kepemilikan_b`
+-- AUTO_INCREMENT untuk tabel `kepemilikan_b`
 --
 ALTER TABLE `kepemilikan_b`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `klasifikasi`
+-- AUTO_INCREMENT untuk tabel `klasifikasi`
 --
 ALTER TABLE `klasifikasi`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kloset`
+-- AUTO_INCREMENT untuk tabel `kloset`
 --
 ALTER TABLE `kloset`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `kondisi`
+-- AUTO_INCREMENT untuk tabel `komentars`
+--
+ALTER TABLE `komentars`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT untuk tabel `kondisi`
 --
 ALTER TABLE `kondisi`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `lokasiusaha`
+-- AUTO_INCREMENT untuk tabel `lokasiusaha`
 --
 ALTER TABLE `lokasiusaha`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=919;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=932;
 
 --
--- AUTO_INCREMENT for table `npwp`
+-- AUTO_INCREMENT untuk tabel `npwp`
 --
 ALTER TABLE `npwp`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `omset`
+-- AUTO_INCREMENT untuk tabel `omset`
 --
 ALTER TABLE `omset`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `partisipasi`
+-- AUTO_INCREMENT untuk tabel `partisipasi`
 --
 ALTER TABLE `partisipasi`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `pekerjaanutama`
+-- AUTO_INCREMENT untuk tabel `pekerjaanutama`
 --
 ALTER TABLE `pekerjaanutama`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `pendidikan`
+-- AUTO_INCREMENT untuk tabel `pendidikan`
 --
 ALTER TABLE `pendidikan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `penggunaaninternet`
+-- AUTO_INCREMENT untuk tabel `penggunaaninternet`
 --
 ALTER TABLE `penggunaaninternet`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `penyakitkronis`
+-- AUTO_INCREMENT untuk tabel `penyakitkronis`
 --
 ALTER TABLE `penyakitkronis`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `perolehminum`
+-- AUTO_INCREMENT untuk tabel `perolehminum`
 --
 ALTER TABLE `perolehminum`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pilihan`
+-- AUTO_INCREMENT untuk tabel `pertanahans`
+--
+ALTER TABLE `pertanahans`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `pilihan`
 --
 ALTER TABLE `pilihan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `provinsi`
+-- AUTO_INCREMENT untuk tabel `profils`
+--
+ALTER TABLE `profils`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+--
+-- AUTO_INCREMENT untuk tabel `provinsi`
 --
 ALTER TABLE `provinsi`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `statuskawin`
+-- AUTO_INCREMENT untuk tabel `sejarahs`
+--
+ALTER TABLE `sejarahs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `statuskawin`
 --
 ALTER TABLE `statuskawin`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `statuskerja`
+-- AUTO_INCREMENT untuk tabel `statuskerja`
 --
 ALTER TABLE `statuskerja`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `suku`
+-- AUTO_INCREMENT untuk tabel `suku`
 --
 ALTER TABLE `suku`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `sumberminum`
+-- AUTO_INCREMENT untuk tabel `sumberminum`
 --
 ALTER TABLE `sumberminum`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `sumberpenerangan`
+-- AUTO_INCREMENT untuk tabel `sumberpenerangan`
 --
 ALTER TABLE `sumberpenerangan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tpa`
+-- AUTO_INCREMENT untuk tabel `tpa`
 --
 ALTER TABLE `tpa`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `warga`
+-- AUTO_INCREMENT untuk tabel `visimisis`
+--
+ALTER TABLE `visimisis`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `warga`
 --
 ALTER TABLE `warga`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
