@@ -13,21 +13,20 @@ class user extends Authenticatable
     protected $table = 'user';
     protected $primaryKey = 'id';
     protected $fillable = [
-       'name',
-       'role',
-       'kecamatan_id',
-       'username',
-       'password',
-   ];
+        'name',
+        'role',
+        'kecamatan_id',
+        'username',
+        'password',
+    ];
 
-   public function kecamatan()
-   {
-    return $this->belongsTo(Kecamatan::class, 'kecamatan_id');
-   }
+    public function kecamatan()
+    {
+        return $this->belongsTo(Kecamatan::class, 'kecamatan_id');
+    }
 
-   public function warga()
-   {
-    return $this->hasMany(warga::class, 'kecamatan_id','id');
-   }
-   
+    public function warga()
+    {
+        return $this->hasMany(warga::class, 'kecamatan_id', 'id');
+    }
 }

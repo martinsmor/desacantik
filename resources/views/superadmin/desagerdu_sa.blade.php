@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/desacantik.png">
@@ -16,7 +17,7 @@
     <!-- third party css end -->
 
     <!-- tabel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0//css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
 
     <!-- App css -->
@@ -25,6 +26,7 @@
     <link href="user/assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
 </head>
+
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
     <!-- sidebar -->
     @include('layout_admin.sidebar_sa')
@@ -34,40 +36,40 @@
     @include('layout_admin.topbar')
     <!-- End Topbar-->
 
-     <!-- start page title -->
-     <div class="row">
+    <!-- start page title -->
+    <div class="row">
         <div class="col-12">
             <div class="page-title-box">
                 <h4 class="page-title text-center">Desa Gerdu</h4>
             </div>
         </div>
-    </div>     
-    <!-- end page title -->   
-    
+    </div>
+    <!-- end page title -->
+
     <!-- Content -->
     <div class="container">
-    <div class="row justify-content-center">
-    <div class="col-md-12">
-    <div class="card">
-    <div class="card-body">            
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
 
-            
-    </div>
-    </div>
-    </div>                                                       
-    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- End Content -->
-            
+
 
     <!-- tabel -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>    
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-        $('#example').DataTable();
+        $(document).ready(function() {
+            $('#example').DataTable();
         });
     </script>
 
@@ -81,23 +83,24 @@
     <!-- Footer-->
     @include('layout_admin.footer')
     <!-- End Footer-->
-    
-        <!-- bundle -->
-        <script src="user/assets/js/vendor.min.js"></script>
-        <script src="user/assets/js/app.min.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <!-- bundle -->
+    <script src="user/assets/js/vendor.min.js"></script>
+    <script src="user/assets/js/app.min.js"></script>
 
-        <!-- third party js -->
-        <!-- <script src="assets/js/vendor/Chart.bundle.min.js"></script> -->
-        <script src="user/assets/js/vendor/apexcharts.min.js"></script>
-        <script src="user/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="user/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
-        <!-- third party js ends -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 
-        <!-- demo app -->
-        <script src="user/assets/js/pages/demo.dashboard-analytics.js"></script>
-        <!-- end demo js-->
+    <!-- third party js -->
+    <!-- <script src="assets/js/vendor/Chart.bundle.min.js"></script> -->
+    <script src="user/assets/js/vendor/apexcharts.min.js"></script>
+    <script src="user/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="user/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- third party js ends -->
+
+    <!-- demo app -->
+    <script src="user/assets/js/pages/demo.dashboard-analytics.js"></script>
+    <!-- end demo js-->
 </body>
+
 </html>
