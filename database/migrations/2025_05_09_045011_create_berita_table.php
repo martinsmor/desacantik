@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('berita', function (Blueprint $table) {
             $table->id();
+            $table->string("judul");
             $table->text("berita");
+            $table->string("gambar");
             $table->timestamps();
         });
     }

@@ -9,6 +9,15 @@ use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\fotoController;
 use App\Http\Controllers\beritaController;
+use App\Http\Controllers\ListBeritaController;
+use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\SejarahController;
+use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\KomentarController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +42,7 @@ Route::get('/admin', function () {
 
 Route::get('/admin', [chartController::class, 'piechart']);
 
-Route::get('/kelolapengguna_admin', function (){
+Route::get('/kelolapengguna_admin', function () {
     return view('admin.kelolapengguna_admin');
 });
 
@@ -66,47 +75,47 @@ Route::post('/editanggota/{id}', [anggotarutaController::class, 'updateanggota']
 // user // 
 Route::get('/user', [chartController::class, 'piechartuser']);
 
-Route::get('/jatiyoso', function (){
+Route::get('/jatiyoso', function () {
     return view('user.kec_jatiyoso');
 });
 
-Route::get('/jatiyoso_ruta', function (){
+Route::get('/jatiyoso_ruta', function () {
     return view('user.jatiyosoruta');
 });
 
-Route::get('/jumantono', function (){
+Route::get('/jumantono', function () {
     return view('user.kec_jumantono');
 });
 
- Route::get('/jumantono_ruta', function (){
+Route::get('/jumantono_ruta', function () {
     return view('user.jumantonoruta');
 });
 
-Route::get('/tawangmangu', function (){
+Route::get('/tawangmangu', function () {
     return view('user.tawangmangu');
 });
 
-Route::get('/tawangmangu_ruta', function (){
+Route::get('/tawangmangu_ruta', function () {
     return view('user.tawangmanguruta');
 });
 
-Route::get('/karangpandan', function (){
+Route::get('/karangpandan', function () {
     return view('user.karangpandan');
 });
 
-Route::get('/karangpandan_ruta', function (){
+Route::get('/karangpandan_ruta', function () {
     return view('user.karangpandanruta');
 });
 
-Route::get('/kebakkramat', function (){
+Route::get('/kebakkramat', function () {
     return view('user.kebakkramat');
 });
 
-Route::get('/kebakkramat_ruta', function (){
+Route::get('/kebakkramat_ruta', function () {
     return view('user.kebakkramatruta');
-}); 
+});
 
-Route::get('/chart', function (){
+Route::get('/chart', function () {
     return view('user.chart');
 });
 
@@ -124,7 +133,7 @@ Route::get('/ubahpass', [userController::class, 'password']);
 
 Route::post('/password', [userController::class, 'password_action']);
 
-Route::get('/logout', [userController::class, 'logout']);
+Route::post('/logout', [userController::class, 'logout'])->name('logout');
 
 //superadmin
 
@@ -136,7 +145,33 @@ Route::post("foto", [fotoController::class, "galeri"])->name("foto.galeri");
 Route::get("/berita", [beritaController::class, "berita"]);
 Route::post("berita", [beritaController::class, "tambahberita"])->name("berita.tambahberita");
 
+Route::get("/listberita", [beritaController::class, "listberita"])->name("list.berita");
+Route::get("/galerifoto", [fotoController::class, "galerifoto"])->name("galeri.foto");
 
+Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
+// Route::get('/test-email', function () {
+//     Mail::raw('Halo! Ini adalah email percobaan dari Laravel.', function ($mail) {
+//         $mail->to('martinsimamora23@gmail.com')->subject('Tes Email Laravel');
+//     });
 
+//     return 'Email sudah dikirim!';
+// });
 
+Route::get('/visimisi', [VisiMisiController::class, 'index'])->name('visimisi');
+Route::get('/sejarah', [SejarahController::class, 'index'])->name('sejarah');
+Route::get("/profil-desa", [ProfilController::class, "profil"])->name("profil-desa.profil");
+Route::post("profil-desa", [ProfilController::class, "store"])->name("profil-desa.profils");
+Route::get('/profildesa', [ProfilController::class, 'index'])->name('profildesa');
+// Route::get("/profil-desa", [ProfilController::class, "profil2"])->name("profil-desa.profil2");
+// Route::post("profil-desa", [ProfilController::class, "store2"])->name("profil-desa.profils2");
+Route::get('/pembangunan', [ProfilController::class, 'index3'])->name('pembangunan');
+Route::get('/pertanahan', [ProfilController::class, 'index2'])->name('pertanahan');
+Route::get('/penduduk', [ProfilController::class, 'index4'])->name('penduduk');
+
+Route::post('/komentar', [KomentarController::class, 'store'])->name('komentar.store');
+Route::get('/komentar', [KomentarController::class, 'index'])->name('komentar.index');
+
+Route::get('/komentars', [KomentarController::class, 'komentars'])->name('komentars');
+Route::delete('/komentars/{id}', [KomentarController::class, 'destroy'])->name('superadmin.komentar.destroy');

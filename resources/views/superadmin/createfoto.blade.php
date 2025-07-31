@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/desacantik.png">
@@ -25,6 +26,7 @@
     <link href="user/assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
 </head>
+
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
     <!-- sidebar -->
     @include('layout_admin.sidebar_sa')
@@ -34,10 +36,12 @@
     @include('layout_admin.topbar')
     <!-- End Topbar-->
 
-     <!-- start page title -->
-     <div class="container">
+    <!-- start page title -->
+    <div class="container">
         <div class="card mt-5">
-            <div class="card-header"><h4>Tambah Foto</h4></div>
+            <div class="card-header">
+                <h4>Tambah Foto</h4>
+            </div>
             <div class="card-body">
 
                 <form method="POST" action="{{route('foto.galeri')}}" enctype="multipart/form-data">
@@ -68,14 +72,14 @@
                     </div>
 
                     <div class="mt-2">
-                        <button class="btn btn-succes">Submit</button>
+                        <button class="btn btn-success">Submit</button>
                     </div>
                 </form>
 
             </div>
         </div>
-    </div>     
-    <!-- end page title -->           
+    </div>
+    <!-- end page title -->
 
     <!-- CSS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -87,23 +91,24 @@
     <!-- Footer-->
     @include('layout_admin.footer')
     <!-- End Footer-->
-    
-        <!-- bundle -->
-        <script src="user/assets/js/vendor.min.js"></script>
-        <script src="user/assets/js/app.min.js"></script>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <!-- bundle -->
+    <script src="user/assets/js/vendor.min.js"></script>
+    <script src="user/assets/js/app.min.js"></script>
 
-        <!-- third party js -->
-        <!-- <script src="assets/js/vendor/Chart.bundle.min.js"></script> -->
-        <script src="user/assets/js/vendor/apexcharts.min.js"></script>
-        <script src="user/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="user/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
-        <!-- third party js ends -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 
-        <!-- demo app -->
-        <script src="user/assets/js/pages/demo.dashboard-analytics.js"></script>
-        <!-- end demo js-->
+    <!-- third party js -->
+    <!-- <script src="assets/js/vendor/Chart.bundle.min.js"></script> -->
+    <script src="user/assets/js/vendor/apexcharts.min.js"></script>
+    <script src="user/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="user/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- third party js ends -->
+
+    <!-- demo app -->
+    <script src="user/assets/js/pages/demo.dashboard-analytics.js"></script>
+    <!-- end demo js-->
 </body>
+
 </html>

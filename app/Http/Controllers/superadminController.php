@@ -8,18 +8,26 @@ use App\Models\warga;
 use App\Models\provinsi;
 use App\Models\kabupaten;
 use App\Models\kecamatan;
+use App\Models\Profil;
 use Yajra\DataTables\DataTables;
 
 class superadminController extends Controller
 {
-    public function beruksa ()
+    public function index()
+    { {
+            $profils = Profil::all(); // atau sesuaikan query jika perlu
+            return view('superadmin.dashboardsa', compact('profils'));
+        }
+    }
+
+    public function beruksa()
     {
-        $warga =  warga::with
-        ( 'provinsi',
-          'kabupaten',
-          'kecamatan',
-          'desa_kelurahan',
-    /*      'desa_kelurahan',
+        $warga =  warga::with(
+            'provinsi',
+            'kabupaten',
+            'kecamatan',
+            'desa_kelurahan',
+            /*      'desa_kelurahan',
          'jenislahan',
         'klasifikasi',
         'hasilcacah',
@@ -36,13 +44,14 @@ class superadminController extends Controller
         'bahanmasak',
         'fasilitasmasak',
         'kloset',
-        'tpa',*/ )->get(); 
+        'tpa',*/
+        )->get();
 
         $provinsi = provinsi::with('warga')->get();
         $kabupaten = kabupaten::with('warga')->get();
         $kecamatan = kecamatan::with('warga')->get();
         $desa_kel = desa_kelurahan::with('warga')->get();
-     /*   $desa_kel = desa_kelurahan::with('warga')->get();
+        /*   $desa_kel = desa_kelurahan::with('warga')->get();
         $jenislahan = provinsi::with('warga')->get();
         $klasifikasi = klasifikasi::with('warga')->get();
         $jenislintang = jenislintang::with('warga')->get();
@@ -63,12 +72,14 @@ class superadminController extends Controller
         $tpa = tpa::with('warga')->get(); */
 
         $warga = warga::limit(20)->get();
-        return view('superadmin.desaberuk_sa', 
-        compact ('warga',
-                 'provinsi',
-                 'kabupaten',
-                 'kecamatan',
-         /*         'desa_kel',
+        return view(
+            'superadmin.desaberuk_sa',
+            compact(
+                'warga',
+                'provinsi',
+                'kabupaten',
+                'kecamatan',
+                /*         'desa_kel',
                 'klasifikasi',
                  'jenislintang',
                  'hasilcacah',
@@ -86,16 +97,17 @@ class superadminController extends Controller
                  'fasilitasmasak',
                  'kloset',
                  'tpa', */
-            ));
+            )
+        );
     }
 
-    public function sambirejosa ()
+    public function sambirejosa()
     {
-        $warga =  warga::with
-        ( 'provinsi',
-          'kabupaten',
-          'kecamatan',
-    /*      'desa_kelurahan',
+        $warga =  warga::with(
+            'provinsi',
+            'kabupaten',
+            'kecamatan',
+            /*      'desa_kelurahan',
          'jenislahan',
         'klasifikasi',
         'hasilcacah',
@@ -112,12 +124,13 @@ class superadminController extends Controller
         'bahanmasak',
         'fasilitasmasak',
         'kloset',
-        'tpa',*/ )->get(); 
+        'tpa',*/
+        )->get();
 
         $provinsi = provinsi::with('warga')->get();
         $kabupaten = kabupaten::with('warga')->get();
         $kecamatan = kecamatan::with('warga')->get();
-     /*   $desa_kel = desa_kelurahan::with('warga')->get();
+        /*   $desa_kel = desa_kelurahan::with('warga')->get();
         $jenislahan = provinsi::with('warga')->get();
         $klasifikasi = klasifikasi::with('warga')->get();
         $jenislintang = jenislintang::with('warga')->get();
@@ -138,12 +151,14 @@ class superadminController extends Controller
         $tpa = tpa::with('warga')->get(); */
 
         $warga = warga::limit(20)->get();
-        return view('superadmin.desasambirejo_sa', 
-        compact ('warga',
-                 'provinsi',
-                 'kabupaten',
-                 'kecamatan',
-         /*         'desa_kel',
+        return view(
+            'superadmin.desasambirejo_sa',
+            compact(
+                'warga',
+                'provinsi',
+                'kabupaten',
+                'kecamatan',
+                /*         'desa_kel',
                 'klasifikasi',
                  'jenislintang',
                  'hasilcacah',
@@ -161,7 +176,8 @@ class superadminController extends Controller
                  'fasilitasmasak',
                  'kloset',
                  'tpa', */
-            ));
+            )
+        );
     }
 
     public function json()

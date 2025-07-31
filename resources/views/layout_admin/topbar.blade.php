@@ -22,7 +22,7 @@
 
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <span class="account-user-avatar"> 
+                        <span class="account-user-avatar">
                             <img src="assets/img/desacantik.png" alt="user-image" class="rounded-circle">
                         </span>
                         <span>
@@ -30,17 +30,22 @@
                             <span class="account-position">Admin</span>
                         </span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                        <!-- item-->
+                    <div class="nav-item dropdown">
                         @auth
-                   <!--     <a href="/ubahpass" class="dropdown-item notify-item">
-                            <i class="mdi mdi-lock-open-check-outline"></i>
-                            <span>Ubah password</span>
+                        <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="mdi mdi-account-circle"></i> Akun
                         </a> -->
-                        <a href="/logout" class="dropdown-item notify-item">
-                            <i class="mdi mdi-logout me-1"></i>
-                            <span>Logout</span>
-                        </a>
+                        <div class="dropdown-menu fade-down m-0">
+                            <a href="/ubahpass" class="dropdown-item">
+                                <i class="mdi mdi-lock-open-check-outline me-1"></i> Ubah Password
+                            </a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="dropdown-item">
+                                    <i class="mdi mdi-logout me-1"></i> Logout
+                                </button>
+                            </form>
+                        </div>
                         @endauth
                     </div>
                 </li>
@@ -51,6 +56,8 @@
                 <i class="mdi mdi-menu"></i>
             </button>
 
-            </div>
         </div>
+
+
+
         <!-- end Topbar -->

@@ -4,14 +4,14 @@
         <div class="leftside-menu">
 
             <!-- LOGO -->
-            <a href="index.html" class="logo text-center logo-light">
+            <a href="/superadmin" class="logo text-center logo-light">
                 <span class="logo-lg">
                     <img src="assets/img/desacantik.png" width="50" height="50"> Admin Desa Cantik
                 </span>
             </a>
 
             <!-- LOGO -->
-            <a href="index.html" class="logo text-center logo-dark">
+            <a href="/superadmin" class="logo text-center logo-dark">
                 <span class="logo-lg">
                     <img src="assets/img/desacantik.png" width="50" height="50"> Admin Desa Cantik
                 </span>
@@ -59,6 +59,20 @@
                             <span> Tambah Berita</span>
                         </a>
                     </li>
+                    <li class="side-nav-item">
+                        <a href="/profil-desa" class="side-nav-link">
+                            <i class="dripicons-blog"></i>
+                            <span> Monografi </span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="/komentars" class="side-nav-link">
+                            <i class="dripicons-blog"></i>
+                            <span> Manajemen Komentar </span>
+                        </a>
+                    </li>
+
                     <li class="side-nav-title side-nav-item"> Kelola pengguna</li>
                     <li class="side-nav-item">
                         <a href="/kelolapengguna" class="side-nav-link">

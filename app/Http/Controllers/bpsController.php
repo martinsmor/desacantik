@@ -7,20 +7,21 @@ use App\Models\warga;
 use App\Models\provinsi;
 use App\Models\kabupaten;
 use App\Models\bansos;
-use App\Models\kecamatan;
 use App\Models\user;
-use Illuminate\Http\Request;
+use App\Models\Profil;
+use App\Models\kecamatan;
+
 
 class bpsController extends Controller
 {
     public function index()
-    {
-        return view('superadmin.dashboardsa', [
-            'warga' => warga::latest()->get()
-        ]);
+    { {
+            $profils = Profil::all(); // atau sesuaikan query jika perlu
+            return view('superadmin.dashboardsa', compact('profils'));
+        }
     }
 
-    
+
     public function kelola()
     {
         $user = user::all();
@@ -29,5 +30,4 @@ class bpsController extends Controller
 
         return view('superadmin.kelolapengguna', compact('user'));
     }
-    
 }
